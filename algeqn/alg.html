@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>Solutions of Algebraic Equations</title>
+    <link rel="stylesheet" href="alg.css">
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/b/bc/PSM_V78_D337_Archimedes.png">
+</head>
+<body>
+
+    <div class="logo">
+        <img src="https://www.kgkite.ac.in/wp-content/themes/kgkite/images/logo.png?x46988" alt="Logo">
+      </div>
+    
+      <header>
+        <ul id="menuList">
+          <a href="../main.html">Home</a>
+          <a href="https://numet.netlify.app/docs/docx" target="_blank">Documentation</a>
+          <a href="#wiki">List of experiments</a>
+          <a href="#design">Design</a>
+        </ul>
+    
+        <ul id="manuList">
+          <a href="../main.html">Home</a>
+          <a href="https://numet.netlify.app/docs/docx" target="_blank">Documentation</a>
+          <a href="#wiki">List of experiments</a>
+          <a href="#design">Design</a>
+        </ul>
+    
+        <div class="hamburger" id="hamburger" onclick="togglemenu()">
+          <ion-icon name="remove-outline" class="first" id="first"></ion-icon>
+          <ion-icon name="remove-outline" class="second" id="second"></ion-icon>
+        </div>
+      </header>
+
+
+      <div class="title">
+        <h1>Solutions of Algebraic Equations</h1>
+      </div>
+
+
+
+      <div class="calculator">
+
+
+        <div class="newton">
+            <h1 onclick="fixed()">Newton Raphson</h1>
+            <fieldset>
+                <legend>Enter the function</legend>
+                <input type="text" required placeholder="Function" id="expression">
+            </fieldset>
+    
+            <fieldset>
+                <legend>Enter the number of decimal places </legend>
+                <input type="number" required placeholder="Decimal Places" id="decimal">
+            </fieldset>
+    
+    
+            <button type="submit" onclick="calculateRoot()">Solve!</button>
+
+            <div id="result"></div>
+          </div>
+
+
+        <div class="Fixed" id="Fixed">
+            <h1 onclick="fixed()">Fixed Point Iteration</h1>
+            <fieldset>
+                <legend>Enter the function</legend>
+                <input type="text" required placeholder="Function" id="functionfixed">
+            </fieldset>
+    
+            <fieldset>
+                <legend>Enter the number of decimal places </legend>
+                <input type="number" required placeholder="Decimal Places" id="decimalPlaces">
+            </fieldset>
+    
+            <span>*Certain functions may not produce solutions as expected.</span><br><br>
+    
+            <button  onclick="solveFixedPoint()" >Solve!</button>
+            <h2 id="fixedresult"></h2><br>
+          </div>
+
+
+
+      </div>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="community">
+          <h2>Community Links</h2>
+          <div class="line"></div>
+          <a href="https://github.com/projects-harishwa" target="_blank">Organisation</a>
+          <a href="#">About</a>
+        </div>
+    
+        <div class="contact">
+          <h2>Contact us</h2>
+          <div class="line"></div>
+          <a href="https://www.kgkite.ac.in/" target="_blank">Website</a>
+          <a href="https://www.kgkite.ac.in/about-us/contact-us/" target="_blank">Email</a>
+        </div>
+    
+        <div class="follow">
+          <h2>Follow</h2>
+          <div class="line"></div>
+          <a href="https://www.youtube.com/@kitetechcollege" target="_blank">Youtube</a>
+          <a href="https://www.instagram.com/harishwa.notded/" target="_blank">Instagram</a>
+          <a href="https://www.linkedin.com/school/kitetechcollege/posts/?feedView=all" target="_blank">Linkedin</a>
+        </div>
+      </footer>
+
+        <!-- Ionicons for the hamburger -->
+  <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons.js"></script>
+  <script src="../main.js"></script>
+  <script src="algeqn.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
+</body>
+</html>

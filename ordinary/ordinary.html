@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>Ordinary Differential Equations</title>
+    <link rel="stylesheet" href="ordinary.css">
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/b/bc/PSM_V78_D337_Archimedes.png">
+</head>
+<body>
+
+    <div class="logo">
+        <img src="https://www.kgkite.ac.in/wp-content/themes/kgkite/images/logo.png?x46988" alt="Logo">
+      </div>
+    
+      <header>
+        <ul id="menuList">
+          <a href="../main.html">Home</a>
+          <a href="https://numet.netlify.app/docs/docx" target="_blank">Documentation</a>
+          <a href="#wiki">List of experiments</a>
+          <a href="#design">Design</a>
+        </ul>
+    
+        <ul id="manuList">
+          <a href="../main.html">Home</a>
+          <a href="https://numet.netlify.app/docs/docx" target="_blank">Documentation</a>
+          <a href="#wiki">List of experiments</a>
+          <a href="#design">Design</a>
+        </ul>
+    
+        <div class="hamburger" id="hamburger" onclick="togglemenu()">
+          <ion-icon name="remove-outline" class="first" id="first"></ion-icon>
+          <ion-icon name="remove-outline" class="second" id="second"></ion-icon>
+        </div>
+      </header>
+
+
+      <div class="title">
+        <h1>Ordinary Differential Equations</h1>
+      </div>
+
+
+
+      <div class="calculator">
+
+        <!---Taylor Series----->
+	<div class="Taylor" id="Taylor">
+		<h1>Taylor Series</h1>
+
+		<fieldset>
+			<legend>Enter the function</legend>
+			<input type="text" required placeholder="Enter dy/dx (e.g., x + y)" id="taylorEquation">
+		</fieldset>
+
+		<fieldset>
+			<legend>Enter initial value of x (x₀)</legend>
+			<input type="number" required placeholder="Initial x" id="taylorX0">
+		</fieldset>
+
+		<fieldset>
+			<legend>Enter initial value of y (y₀)</legend>
+			<input type="number" required placeholder="Initial y" id="taylorY0">
+		</fieldset>
+
+		<fieldset>
+			<legend>Enter step length (h)</legend>
+			<input type="number" required placeholder="Step length" id="taylorH">
+		</fieldset>
+
+		<fieldset>
+			<legend class="font-adjust">Enter value of x at which y is to be found </legend>
+			<input type="number" required placeholder="y(x)" id="taylorXg" oninput="clearTaylorResults()">
+		</fieldset>
+
+		<button onclick="calculateTaylorSeries()" >Solve!</button>
+		<h2 id="taylorResult"></h2><br>
+		 <pre id="taylorDetails"></pre>
+
+	</div>
+<!---Taylor Series----->
+
+
+<!---Eulers method----->
+<div class="Euler" id="Euler">
+    <h1>Euler's method</h1>
+
+    <fieldset>
+        <legend>Enter the function</legend>
+        <input type="text" required placeholder="Enter dy/dx (e.g., x + y)" id="eulerEquation">
+    </fieldset>
+
+    <fieldset>
+        <legend>Enter initial value of x (x₀)</legend>
+        <input type="number" required placeholder="Initial x" id="eulerX0">
+    </fieldset>
+
+    <fieldset>
+        <legend>Enter initial value of y (y₀)</legend>
+        <input type="number" required placeholder="Initial y" id="eulerY0">
+    </fieldset>
+
+    <fieldset>
+        <legend>Enter step length (h)</legend>
+        <input type="number" required placeholder="Step length" id="eulerH">
+    </fieldset>
+
+    <fieldset>
+        <legend class="font-adjust">Enter value of x at which y is to be found </legend>
+        <input type="number" required placeholder="y(x)" id="eulerXg" oninput="clearTaylorResults()">
+    </fieldset>
+
+    <button onclick="calculateEulersMethod()" >Solve!</button>
+    <h2 id="eulerResult"></h2><br>
+     <pre id="eulerDetails"></pre>
+
+
+</div>
+<!---Eulers method----->
+
+      </div>
+
+      <div class="container">
+        
+<!---Milne Corrector ----->
+<div class="Milne" id="Milne">
+    <h1>Milne's Predictor & Corrector</h1>
+
+    <fieldset>
+        <legend>Enter the function</legend>
+        <input type="text" required placeholder="Enter dy/dx (e.g., x + y)" id="milneEquation">
+    </fieldset>
+
+    <fieldset>
+        <legend>Enter initial value of x (x₀)</legend>
+        <input type="number" required placeholder="Initial x" id="milneX0">
+    </fieldset>
+
+    <fieldset>
+        <legend>Enter initial value of y (y₀)</legend>
+        <input type="number" required placeholder="Initial y" id="milneY0">
+    </fieldset>
+
+    <fieldset>
+        <legend>Enter step length (h)</legend>
+        <input type="number" required placeholder="Step length" id="milneH">
+    </fieldset>
+
+    <fieldset>
+        <legend class="font-adjust">Enter value of x at which y is to be found </legend>
+        <input type="number" required placeholder="y(x)" id="milneXg" oninput="clearMilneResults()">
+    </fieldset>
+
+    <button onclick="calculateMilneMethod()" >Solve!</button>
+    <h2 id="milneResult"></h2><br>
+     <pre id="milneDetails"></pre>
+
+</div>
+<!---Milne Corrector----->
+
+
+<!---Adam Bashforth method ----->
+<div class="Adam" id="Adam">
+    <h1>Adam's Bashforth Pred & Corr.</h1>
+
+    <fieldset>
+        <legend>Enter the function</legend>
+        <input type="text" required placeholder="Enter dy/dx (e.g., x + y)" id="adamEquation">
+    </fieldset>
+
+    <fieldset>
+        <legend>Enter initial value of x (x₀)</legend>
+        <input type="number" required placeholder="Initial x" id="adamX0">
+    </fieldset>
+
+    <fieldset>
+        <legend>Enter initial value of y (y₀)</legend>
+        <input type="number" required placeholder="Initial y" id="adamY0">
+    </fieldset>
+
+    <fieldset>
+        <legend>Enter step length (h)</legend>
+        <input type="number" required placeholder="Step length" id="adamH">
+    </fieldset>
+
+    <fieldset>
+        <legend class="font-adjust">Enter value of x at which y is to be found </legend>
+        <input type="number" required placeholder="y(x)" id="adamXg" oninput="clearAdamResults()">
+    </fieldset>
+
+    <button onclick="calculateAdamBashforthMethod()" >Solve!</button>
+    <h2 id="adamResult"></h2><br>
+     <pre id="adamDetails"></pre>
+
+</div>
+<!----Adam Bashforth method---->
+      </div>
+    
+
+      <!---Rangekutta----->
+	<div class="RangeKutta" id="Rangeku">
+		<h1>RangeKutta 4th Order Method</h1>
+		<fieldset>
+			<legend>Enter the function</legend>
+			<input type="text" required placeholder="Enter dy/dx (e.g., x + y)" id="equation">
+		</fieldset>
+
+		<fieldset>
+			<legend>Enter initial value of x (x₀)</legend>
+			<input type="number" required placeholder="Initial x" id="x0">
+		</fieldset>
+
+		<fieldset>
+			<legend>Enter initial value of y (y₀)</legend>
+			<input type="number" required placeholder="Initial y" id="y0">
+		</fieldset>
+
+		<fieldset>
+			<legend>Enter step length (h)</legend>
+			<input type="number" required placeholder="Step length" id="h">
+		</fieldset>
+
+		<fieldset>
+			<legend class="font-adjust">Enter value of x at which y is to be found </legend>
+			<input type="number" required placeholder="y(x)" id="xg">
+		</fieldset>
+
+		<button onclick="calculateRK4()" >Solve!</button>
+		<h2 id="resultRange"></h2><br>
+		 <pre id="detailsRange"></pre>
+
+	</div>
+<!---Rangekutta----->
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="community">
+          <h2>Community Links</h2>
+          <div class="line"></div>
+          <a href="#">Organisation</a>
+          <a href="#">About</a>
+        </div>
+    
+        <div class="contact">
+          <h2>Contact us</h2>
+          <div class="line"></div>
+          <a href="https://www.kgkite.ac.in/" target="_blank">Website</a>
+          <a href="#">Email</a>
+        </div>
+    
+        <div class="follow">
+          <h2>Follow</h2>
+          <div class="line"></div>
+          <a href="https://www.youtube.com/@kitetechcollege" target="_blank">Youtube</a>
+          <a href="https://www.instagram.com/harishwa.notded/" target="_blank">Instagram</a>
+          <a href="https://www.linkedin.com/school/kitetechcollege/posts/?feedView=all" target="_blank">Linkedin</a>
+        </div>
+      </footer>
+
+        <!-- Ionicons for the hamburger -->
+  <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons.js"></script>
+  <script src="../main.js"></script>
+  <script src="ordinary.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
+</body>
+</html>

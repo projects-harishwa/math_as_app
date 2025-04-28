@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>Ordinary Differential Equations</title>
+    <link rel="stylesheet" href="numint.css">
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/b/bc/PSM_V78_D337_Archimedes.png">
+</head>
+<body>
+
+    <div class="logo">
+        <img src="https://www.kgkite.ac.in/wp-content/themes/kgkite/images/logo.png?x46988" alt="Logo">
+      </div>
+    
+      <header>
+        <ul id="menuList">
+          <a href="../main.html">Home</a>
+          <a href="https://numet.netlify.app/docs/docx" target="_blank">Documentation</a>
+          <a href="#wiki">List of experiments</a>
+          <a href="#design">Design</a>
+        </ul>
+    
+        <ul id="manuList">
+          <a href="../main.html">Home</a>
+          <a href="https://numet.netlify.app/docs/docx" target="_blank">Documentation</a>
+          <a href="#wiki">List of experiments</a>
+          <a href="#design">Design</a>
+        </ul>
+    
+        <div class="hamburger" id="hamburger" onclick="togglemenu()">
+          <ion-icon name="remove-outline" class="first" id="first"></ion-icon>
+          <ion-icon name="remove-outline" class="second" id="second"></ion-icon>
+        </div>
+      </header>
+
+
+      <div class="title">
+        <h1>Numerical Integration</h1>
+      </div>
+
+
+
+      <div class="calculator">
+
+        <!---Trapezoidal----->
+		<div class="Trapezoidal" id="Trape">
+            <h1>Trapezoidal Double Integral</h1>
+            <fieldset>
+                <legend>Enter the function</legend>
+                <input type="text" required placeholder="Enter dy/dx (e.g., x + y)" id="functionInput">
+            </fieldset>
+    
+            <fieldset>
+                <legend>Enter lower limit x (x₀)</legend>
+                <input type="text" required placeholder="Lower limit of x" id="xLower">
+            </fieldset>
+    
+            <fieldset>
+                <legend>Enter upper limit x </legend>
+                <input type="text" required placeholder="Upper limit of x" id="xUpper">
+            </fieldset>
+    
+            <fieldset>
+                <legend>Enter lower limit of y(y₀) </legend>
+                <input type="text" required placeholder="Lower limit of y" id="yLower">
+            </fieldset>
+    
+            <fieldset>
+                <legend class="font-adjust">Enter upper limit of y </legend>
+                <input type="text" required placeholder="Upper limit of y" id="yUpper">
+            </fieldset>
+    
+            <fieldset>
+                <legend>Enter the value of h (optional)</legend>
+                <input type="text" required placeholder="Default: 1" id="hValue">
+            </fieldset>
+    
+            <fieldset>
+                <legend>Enter the value of k (optional)</legend>
+                <input type="text" required placeholder="Default: 1" id="kValue">
+            </fieldset>
+    
+            <button onclick="calculateIntegral()" method='submit'>Solve!</button>
+            <h2 id="result_trap"></h2>
+
+        </div>
+    <!---Trapezoidal----->
+    
+    
+    <!---Simpson----->
+            <div class="Simpson" id="Simp">
+            <h1>Simpson's Double Integration</h1>
+            <fieldset>
+                <legend>Enter the function</legend>
+                <input type="text" required placeholder="Enter dy/dx (e.g., x + y)" id="simpsonFunctionInput">
+            </fieldset>
+    
+            <fieldset>
+                <legend>Enter lower limit x (x₀)</legend>
+                <input type="text" required placeholder="Lower limit of x" id="simpsonXLower">
+            </fieldset>
+    
+            <fieldset>
+                <legend>Enter upper limit x </legend>
+                <input type="text" required placeholder="Upper limit of x" id="simpsonXUpper">
+            </fieldset>
+    
+            <fieldset>
+                <legend>Enter lower limit of y(y₀) </legend>
+                <input type="text" required placeholder="Lower limit of y" id="simpsonYLower">
+            </fieldset>
+    
+            <fieldset>
+                <legend class="font-adjust">Enter upper limit of y </legend>
+                <input type="text" required placeholder="Upper limit of y" id="simpsonYUpper">
+            </fieldset>
+    
+            <fieldset>
+                <legend>Enter the value of h (optional)</legend>
+                <input type="text" required placeholder="Default: 1" id="simpsonHValue">
+            </fieldset>
+    
+            <fieldset>
+                <legend>Enter the value of k (optional)</legend>
+                <input type="text" required placeholder="Default: 1" id="simpsonKValue">
+            </fieldset>
+    
+            <button onclick="calculateSimpsonIntegral()" method='submit'>Solve!</button>
+            <h2 id="simpsonResult"></h2>
+        </div>
+    <!---Simpson----->
+    
+    
+
+      </div>
+
+      <div class="container">
+
+        <!---Trapezoidal single integral----->
+		<div class="Trape_single" id="trapesing">
+            <h1>Trapezoidal Single Integral</h1>
+
+            <fieldset>
+                <legend>Enter the function</legend>
+                <input type="text" required placeholder="Enter dy/dx (e.g., x + y)" id="singleFunction">
+            </fieldset>
+    
+    
+            <fieldset>
+                <legend>Enter lower limit x (x₀)</legend>
+                <input type="text" required placeholder="Lower limit of x" id="singleLowerX">
+            </fieldset>
+    
+            <fieldset>
+                <legend>Enter upper limit x </legend>
+                <input type="text" required placeholder="Upper limit of x" id="singleUpperX">
+            </fieldset>
+    
+            <fieldset>
+                <legend>Enter the value of v(optional)</legend>
+                <input type="text" required placeholder="Default: 1" id="singleVValue">
+            </fieldset>
+            
+            <span>For exponents use <b>Math.E**()</b> and for roots use the its power form.</span><br><br>	
+    
+            <button onclick="calculateTrapezoidal()" method='submit'>Solve!</button>
+            <h2 id="singleResult"></h2>
+
+        </div>
+    <!---Trapezoidal single integral----->
+    
+    
+    <!---Simpson single integral----->
+            <div class="Simp_single" id="simpsing">
+            <h1>Simpson 1/3rd single Integral</h1>
+
+            <fieldset>
+                <legend>Enter the function</legend>
+                <input type="text" required placeholder="Enter dy/dx (e.g., x + y)" id="simpsonFunction">
+            </fieldset>
+    
+    
+            <fieldset>
+                <legend>Enter lower limit x (x₀)</legend>
+                <input type="text" required placeholder="Lower limit of x" id="simpsonLowerX">
+            </fieldset>
+    
+            <fieldset>
+                <legend>Enter upper limit x </legend>
+                <input type="text" required placeholder="Upper limit of x" id="simpsonUpperX">
+            </fieldset>
+    
+            <fieldset>
+                <legend>Enter the value of v(optional)</legend>
+                <input type="text" required placeholder="Default: 1" id="simpsonVValue">
+            </fieldset>
+    
+            <span>For exponents use <b>Math.E**()</b> and for roots use the its power form.</span><br><br>	
+    
+        
+    
+            <button onclick="calculateSimpson()" method='submit'>Solve!</button>
+            <h2 id="simpsonsingleResult"></h2>
+
+        </div>
+    <!---Simpson single integral----->
+    
+
+      </div>
+    
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="community">
+          <h2>Community Links</h2>
+          <div class="line"></div>
+          <a href="#">Organisation</a>
+          <a href="#">About</a>
+        </div>
+    
+        <div class="contact">
+          <h2>Contact us</h2>
+          <div class="line"></div>
+          <a href="https://www.kgkite.ac.in/" target="_blank">Website</a>
+          <a href="#">Email</a>
+        </div>
+    
+        <div class="follow">
+          <h2>Follow</h2>
+          <div class="line"></div>
+          <a href="https://www.youtube.com/@kitetechcollege" target="_blank">Youtube</a>
+          <a href="https://www.instagram.com/harishwa.notded/" target="_blank">Instagram</a>
+          <a href="https://www.linkedin.com/school/kitetechcollege/posts/?feedView=all" target="_blank">Linkedin</a>
+        </div>
+      </footer>
+
+        <!-- Ionicons for the hamburger -->
+  <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons.js"></script>
+  <script src="../main.js"></script>
+  <script src="numint.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
+</body>
+</html>
